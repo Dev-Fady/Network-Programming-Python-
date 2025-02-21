@@ -20,6 +20,9 @@ def Server():
         #^3- استقبال البيانات من العميل (حجم البيانات الأقصى 1024 بايت)
         received_data, client_address = sock.recvfrom(1024)
 
+# *        received_data → بتحتوي على البيانات اللي العميل بعتها، ولكن بصيغة bytes.
+# *        client_address → بتحتوي على عنوان العميل (IP + Port) اللي بعت البيانات.
+
         #^4- تحويل البيانات المستقبلة من bytes إلى string
         decoded_message = received_data.decode('ascii')
         print(f"📩 Received data from {client_address}: {decoded_message}")
