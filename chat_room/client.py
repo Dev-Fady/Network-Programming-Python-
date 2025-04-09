@@ -28,8 +28,8 @@ def receive_message():
 def SendMessage():
     while True:
         try:
-             msg = nickName + ': ' + input()
-             client.sendall(msg.encode('ascii'))
+            msg = input()
+            client.sendall(msg.encode('ascii'))
         except:
             print("An error occurred:")
             client.close()
