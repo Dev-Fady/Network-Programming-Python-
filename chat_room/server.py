@@ -43,7 +43,9 @@ def receive(client):
     while True:
         try:
             msg = client.recv(1024).decode("ascii")
-            broadcast(msg)
+            index = clients.index(client)
+            nickname = nicknames[index]
+            broadcast(f"{nickname}: {msg}")
         except:
             index = clients.index(client)
             nickname = nicknames[index]
